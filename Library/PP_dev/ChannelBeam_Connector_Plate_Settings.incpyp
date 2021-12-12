@@ -1,0 +1,18 @@
+<Parameter>
+    <Name>ConnectorPlateWidth</Name>
+    <Text>Width</Text>
+    <Value>254</Value>
+    <ValueType>Length</ValueType>
+</Parameter>
+<Parameter>
+    <Name>ConnectorPlateHeight</Name>
+    <Text>Height</Text>
+    <Value>200</Value>
+    <ValueType>Length</ValueType>
+</Parameter>
+<Parameter>
+    <Name>ConnectorPlateThickness</Name>
+    <Text>Thickness</Text>
+    <Value>25.4</Value>
+    <ValueType>Length</ValueType>
+</Parameter>

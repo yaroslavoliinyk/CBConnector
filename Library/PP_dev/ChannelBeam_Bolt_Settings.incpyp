@@ -1,0 +1,52 @@
+<!-- Bolt settings -->
+
+<Parameter>
+    <Name>Row1</Name>
+    <Text> </Text>
+    <ValueType>Row</ValueType>
+
+    <Parameter>
+        <Name>FirstText</Name>
+        <Text> </Text>
+        <ValueType>Text</ValueType>
+    </Parameter>
+</Parameter>
+<Parameter>
+    <Name>BoltDiameter</Name>
+    <Text>Diameter</Text>
+    <Value>25.4</Value>
+    <ValueType>Length</ValueType>
+</Parameter>
+<Parameter>
+    <Name>BoltNumberX</Name>
+    <Text>Number of bolts - X</Text>
+    <Value>2</Value>
+    <ValueType>Integer</ValueType>
+</Parameter>
+<Parameter>
+    <Name>BoltStepX</Name>
+    <Text>Distance between bolt centers - X</Text>
+    <Value>76.2</Value>
+    <ValueType>Length</ValueType>
+    <Visible>False</Visible>
+</Parameter>
+<Parameter>
+    <Name>BoltNumberY</Name>
+    <Text>Number of bolts - Z</Text>
+    <Value>2</Value>
+    <ValueType>Integer</ValueType>
+</Parameter>
+<Parameter>
+    <Name>BoltStepY</Name>
+    <Text>Distance between bolt centers - Z</Text>
+    <Value>76.2</Value>
+    <ValueType>Length</ValueType>
+    <Visible>False</Visible>
+</Parameter>
+<Parameter>
+    <Name>BoltEdgeOffset</Name>
+    <Text>Edge distance to bolt centers</Text>
+    <Value>38.1</Value>
+    <ValueType>Length</ValueType>
+    <MinValue>BoltDiameter# / 2</MinValue>
+</Parameter>

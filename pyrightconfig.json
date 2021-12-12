@@ -1,0 +1,6 @@
+{
+    "reportMissingModuleSource": false,
+    "ignore": [
+        "elements/connector/"
+    ]
+}

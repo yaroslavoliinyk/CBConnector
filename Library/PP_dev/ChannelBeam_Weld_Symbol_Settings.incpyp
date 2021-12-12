@@ -1,0 +1,150 @@
+<Parameter>
+    <Name>WeldType</Name>
+    <Text>Weld Type</Text>
+    <TextId>1003</TextId>
+    <Value>Fillet</Value>
+    <ValueList>Fillet|Spot|Back|Groove|</ValueList>
+    <ValueType>StringComboBox</ValueType>
+</Parameter>
+
+<Parameter>
+    <Name>GrooveType</Name>
+    <Text>Groove Type</Text>
+    <TextId>1004</TextId>
+    <Value>Square</Value>
+    <ValueList>Square|V|Bevel|U|J|FlareV|FlareBevel|</ValueList>
+    <ValueType>StringComboBox</ValueType>
+    <Visible>WeldType# in {'Groove'}</Visible>
+</Parameter>
+
+<Parameter>
+    <Name>Location</Name>
+    <Text>Location</Text>
+    <TextId>1005</TextId>
+    <Value>Arrow</Value>
+    <ValueList>Arrow|Other|Both|NA|</ValueList>
+    <ValueType>StringComboBox</ValueType>
+</Parameter>
+
+<!-- Dimensions -->
+
+<Parameter>
+    <Name>ShowSize</Name>
+    <Text>Show Size</Text>
+    <TextId>1007</TextId>
+    <Value>False</Value>
+    <ValueType>CheckBox</ValueType>
+</Parameter>
+
+<Parameter>
+    <Name>WeldSize</Name>
+    <Text>Weld Size (Arrow)</Text>
+    <TextId>1008</TextId>
+    <Value>12</Value>
+    <ValueType>String</ValueType>
+    <Visible>ShowSize#</Visible>
+</Parameter>
+
+<Parameter>
+    <Name>WeldSizeO</Name>
+    <Text>Weld Size (Other)</Text>
+    <TextId>1009</TextId>
+    <Value>10</Value>
+    <ValueType>String</ValueType>
+    <Visible>ShowSize#</Visible>
+</Parameter>
+
+<Parameter>
+    <Name>GrooveSizeA</Name>
+    <Text>Groove Size (Arrow)</Text>
+    <TextId>1010</TextId>
+    <Value>6</Value>
+    <ValueType>String</ValueType>
+    <Visible>WeldType# in {'Groove'} and ShowSize#</Visible>
+</Parameter>
+
+<Parameter>
+    <Name>GrooveSizeO</Name>
+    <Text>Groove Size (Other)</Text>
+    <TextId>1011</TextId>
+    <Value>5</Value>
+    <ValueType>String</ValueType>
+    <Visible>WeldType# in {'Groove'} and ShowSize#</Visible>
+</Parameter>
+
+<Parameter>
+    <Name>ShowLength</Name>
+    <Text>Show Length</Text>
+    <TextId>1012</TextId>
+    <Value>False</Value>
+    <ValueType>CheckBox</ValueType>
+</Parameter>
+
+<Parameter>
+    <Name>WeldLength</Name>
+    <Text>Weld Length (Arrow)</Text>
+    <TextId>1013</TextId>
+    <Value>120</Value>
+    <ValueType>String</ValueType>
+    <Visible>ShowLength#</Visible>
+</Parameter>
+
+<Parameter>
+    <Name>WeldLengthO</Name>
+    <Text>Weld Length (Other)</Text>
+    <TextId>1014</TextId>
+    <Value>100</Value>
+    <ValueType>String</ValueType>
+    <Visible>ShowLength#</Visible>
+</Parameter>
+
+<Parameter>
+    <Name>ShowPitch</Name>
+    <Text>Show Pitch</Text>
+    <TextId>1015</TextId>
+    <Value>False</Value>
+    <ValueType>CheckBox</ValueType>
+</Parameter>
+
+<Parameter>
+    <Name>WeldPitch</Name>
+    <Text>Weld Pitch (Arrow)</Text>
+    <TextId>1016</TextId>
+    <Value>12</Value>
+    <ValueType>String</ValueType>
+    <Visible>ShowPitch#</Visible>
+</Parameter>
+
+<Parameter>
+    <Name>WeldPitchO</Name>
+    <Text>Weld Pitch (Other)</Text>
+    <TextId>1017</TextId>
+    <Value>10</Value>
+    <ValueType>String</ValueType>
+    <Visible>ShowPitch#</Visible>
+</Parameter>
+
+<!-- Details -->
+<Parameter>
+    <Name>WeldAround</Name>
+    <Text>Weld All Around</Text>
+    <TextId>1019</TextId>
+    <Value>False</Value>
+    <ValueType>CheckBox</ValueType>
+</Parameter>
+
+<Parameter>
+    <Name>FieldWeld</Name>
+    <Text>Field Weld</Text>
+    <TextId>1020</TextId>
+    <Value>False</Value>
+    <ValueType>CheckBox</ValueType>
+</Parameter>
+
+<Parameter>
+    <Name>TailNote</Name>
+    <Text>Tail Note</Text>
+    <TextId>1021</TextId>
+    <Value></Value>
+    <ValueType>String</ValueType>
+</Parameter>

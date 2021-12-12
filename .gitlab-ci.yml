@@ -1,0 +1,74 @@
+variables:
+  PLUGIN_NAME: ChannelBeam
+  ASSEMBLY: $Assembly_Root
+  ASSEMBLY_PLUGIN_FOLDER: $Assembly_Root\Plugins\ChannelBeam\
+  OUTPUT_FOLDER: $AssemblyInstallers_Root\Plugins\ChannelBeam
+  SVN_TRUNK_ROOT: $SVN_ASSEMBLY/Plugins/ChannelBeam/Binaries
+  SVN_TAGS_ROOT: $SVN_TAGS_DEV/ChannelBeam
+  
+stages:
+  - deploy_trunk
+  - deploy_tags
+
+
+
+deploy_trunk:
+
+  stage: deploy_trunk
+  
+  before_script:
+    - CHCP 65001
+
+  script:
+
+   - echo "Sync with svn" 
+   - '%SVN% cleanup %ASSEMBLY%'
+   - '%SVN% update %ASSEMBLY% --username CI_bot'
+   
+   - echo "Copy files"
+   - 'xcopy /f /y /s "Library\PP_dev\*" "%ASSEMBLY_PLUGIN_FOLDER%\Binaries\Library\PP_dev\*"'
+   - 'xcopy /f /y /e "Scripts\PP_dev\*" "%ASSEMBLY_PLUGIN_FOLDER%\Binaries\PythonPartsScripts\PP_dev\*"'
+
+   - echo "Sync with svn" 
+   - '%SVN% cleanup %ASSEMBLY%'
+   - '%SVN% update %ASSEMBLY% --username CI_bot'
+   - '%SVN% cleanup %ASSEMBLY%'
+   - '%SVN% add %ASSEMBLY%\* --force'
+   - '%SVN% cleanup %ASSEMBLY%'
+   - '%SVN% commit %ASSEMBLY% -m "GitLab build %PLUGIN_NAME% %CI_COMMIT_TAG%"'
+   
+  only:
+   - tags 
+
+
+make_setup_deploy_tags:
+
+  stage: deploy_tags
+  
+  before_script:
+   - CHCP 65001
+   - '%XMLSTARLET% sel -t -v "/Element/Script/Version" "%ASSEMBLY_PLUGIN_FOLDER%\Binaries\Library\PP_dev\%PLUGIN_NAME%.pyp" > %TEMP%\version.txt'
+   - set /p PP_VERSION=<%TEMP%\version.txt
+   - del /F %TEMP%\version.txt
+   - set OUTPUT_FILENAME=%PLUGIN_NAME%_v%PP_VERSION%
+
+  script:
+   - echo "make setup and deploy to tags"
+   
+   - echo %PP_VERSION%
+
+   - '%SVN% cleanup %ASSEMBLY%'
+   - '%SVN% update %ASSEMBLY% --username CI_bot'
+
+   - echo %WINRAR%
+   - echo "run winrar"
+   - '"%WINRAR%" a -r -ep1 "%OUTPUT_FOLDER%\%OUTPUT_FILENAME%.rar" "%ASSEMBLY_PLUGIN_FOLDER%\Binaries\*"'
+   - '"%WINRAR%" a -r -ep1 "%OUTPUT_FOLDER%\%OUTPUT_FILENAME%.rar" "%ASSEMBLY%\All\Binaries\AllbauSoftware\PythonParts localization\*.*"'
+   - echo "Copy from trunk to tags"
+   - '%SVN% copy %SVN_TRUNK_ROOT% %SVN_TAGS_ROOT%/%CI_COMMIT_TAG%/%PP_VERSION%  -m "GitLab Copy %PLUGIN_NAME% %PP_VERSION% Trunk to Tags" --parents'
+
+   - echo "import setup file"
+   - '%SVN% import -m "GitLab Import %OUTPUT_FILENAME%.rar to Tags" "%OUTPUT_FOLDER%\%OUTPUT_FILENAME%.rar" "%SVN_TAGS_ROOT%/%CI_COMMIT_TAG%/%PP_VERSION%/%OUTPUT_FILENAME%.rar"'
+
+  only:
+   - tags 

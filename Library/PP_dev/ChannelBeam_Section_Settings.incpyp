@@ -1,0 +1,132 @@
+<Parameter>
+    <Name>SectionName</Name>
+    <Text>Section name</Text>
+    <Value></Value>
+    <ValueType>String</ValueType>
+    <Enable>False</Enable>
+</Parameter>
+<Parameter>
+    <Name>SectionRbNumber</Name>
+    <Text>Section rb number</Text>
+    <Value></Value>
+    <ValueType>String</ValueType>
+    <Visible>False</Visible>
+</Parameter>
+<Parameter>
+    <Name>SectionSelectButton</Name>
+    <Text> </Text>
+    <ValueType>Row</ValueType>
+    <Parameter>
+        <Name>SectionSelectButton</Name>
+        <Text>Select</Text>
+        <EventId>100#</EventId>
+        <ValueType>Button</ValueType>
+    </Parameter>
+</Parameter>
+<Parameter>
+    <Name>SectionStartEntryLength</Name>
+    <Text>Start entry length</Text>
+    <Value>50.8</Value>
+    <ValueType>Length</ValueType>
+     
+</Parameter>
+<Parameter>
+    <Name>SectionEndEntryLength</Name>
+    <Text>End entry length</Text>
+    <Value>50.8</Value>
+    <ValueType>Length</ValueType>
+     
+</Parameter>
+<Parameter>
+    <Name>SectionStartEntryHeight</Name>
+    <Text>Start entry height</Text>
+    <Value>152.4</Value>
+    <ValueType>Length</ValueType>
+     
+</Parameter>
+<Parameter>
+    <Name>SectionEndEntryHeight</Name>
+    <Text>End entry height</Text>
+    <Value>152.4</Value>
+    <ValueType>Length</ValueType>
+     
+</Parameter>
+
+<Parameter>
+    <Name>SectionPolygon</Name>
+    <Text>Polygon</Text>
+    <Value></Value>
+    <ValueType>String</ValueType>
+    <Visible>False</Visible>
+</Parameter>
+
+<Parameter>
+    <Name>Multiplier</Name>
+    <Text>Multiplier</Text>
+    <Value>25.4</Value>
+    <ValueType>Length</ValueType>
+    <Visible>False</Visible>
+</Parameter>
+
+<Parameter>
+    <Name>Separator1</Name>
+    <ValueType>Separator</ValueType>
+</Parameter>
+
+<Parameter>
+<Name>BoltDiameterLeftTop</Name>
+    <Text>Left Bolts Diameter</Text>
+    <Value>25.4</Value>
+    <ValueType>Length</ValueType>
+</Parameter>
+<Parameter>
+    <Name>BoltNumberXLeftTop</Name>
+    <Text>Number of left bolts - X</Text>
+    <Value>2</Value>
+    <ValueType>Integer</ValueType>
+</Parameter>
+<Parameter>
+    <Name>BoltNumberYLeftTop</Name>
+    <Text>Number of left bolts - Z</Text>
+    <Value>2</Value>
+    <ValueType>Integer</ValueType>
+</Parameter>
+<Parameter>
+    <Name>BoltEdgeOffsetLeftTop</Name>
+    <Text>Edge distance to left bolt centers</Text>
+    <Value>38.1</Value>
+    <ValueType>Length</ValueType>
+    <MinValue>0</MinValue>
+</Parameter>
+
+<Parameter>
+    <Name>Separator1</Name>
+    <ValueType>Separator</ValueType>
+</Parameter>
+
+<Parameter>
+<Name>BoltDiameterRightTop</Name>
+    <Text>Right Bolts Diameter</Text>
+    <Value>25.4</Value>
+    <ValueType>Length</ValueType>
+</Parameter>
+<Parameter>
+    <Name>BoltNumberXRightTop</Name>
+    <Text>Number of right bolts - X</Text>
+    <Value>2</Value>
+    <ValueType>Integer</ValueType>
+</Parameter>
+<Parameter>
+    <Name>BoltNumberYRightTop</Name>
+    <Text>Number of right bolts - Z</Text>
+    <Value>2</Value>
+    <ValueType>Integer</ValueType>
+</Parameter>
+<Parameter>
+    <Name>BoltEdgeOffsetRightTop</Name>
+    <Text>Edge distance to right bolt centers</Text>
+    <Value>38.1</Value>
+    <ValueType>Length</ValueType>
+    <MinValue>0</MinValue>
+</Parameter>
+
